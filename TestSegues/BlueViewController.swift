@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BlueViewController.swift
 //  TestSegues
 //
 //  Created by Rudolf Farkas on 28.04.20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BlueViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

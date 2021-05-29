@@ -9,37 +9,50 @@
 import UIKit
 
 class BlueViewController: UIViewController {
-    private lazy var unwindToRedButton = UIButton.actionButton(title: "unwind to Red", action: unwindToRedButtonTap)
-
-    @objc func unwindToRedButtonTap(sender: UIButton?) {
-        printClassAndFunc()
-        performSegue(withIdentifier: "unwindToRedVC", sender: self)
-    }
+    private lazy var unwindToRedButton = UIButton.actionButton(title: "unwind to Red", action: { [weak self] in
+        self?.printClassAndFunc()
+        self?.performSegue(withIdentifier: "unwindToRedVC", sender: self)
+    })
 
     func layoutSubviews() {
         let safeAreaLayoutGuide = view.safeAreaLayoutGuide
 
         NSLayoutConstraint.activate([
             unwindToRedButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            unwindToRedButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 8),
+            unwindToRedButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        printClassAndFunc()
+        printClassAndFunc(info: "@")
 
         view.addSubview(unwindToRedButton)
         layoutSubviews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        printClassAndFunc(info: "@")
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        printClassAndFunc()
+        printClassAndFunc(info: "@")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        printClassAndFunc(info: "@")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        printClassAndFunc(info: "@")
     }
 
     deinit {
-        printClassAndFunc()
+        printClassAndFunc(info: "@")
     }
 }
 

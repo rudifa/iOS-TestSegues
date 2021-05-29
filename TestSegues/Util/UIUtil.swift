@@ -1,5 +1,5 @@
 //
-//  UIUtil.swift v.0.2.3
+//  UIUtil.swift v.0.3.1
 //  SwiftUtilBiP
 //
 //  Created by Rudolf Farkas on 04.09.18.
@@ -72,12 +72,12 @@ extension UILabel {
 // https://cocoacasts.com/elegant-controls-in-swift-with-closures
 /// Button with storage for an action callback
 class ButtonWithAction: UIButton {
-    typealias ActionCallback = (ButtonWithAction) -> Void
+    typealias ActionCallback = () -> Void
 
     // On notification from the button calls the actionCallback
     @objc private func onTouchUpInside(sender: UIButton) {
         if let actionCallback = actionCallback {
-            actionCallback(self)
+            actionCallback()
         }
     }
 

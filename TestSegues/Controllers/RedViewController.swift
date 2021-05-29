@@ -9,37 +9,50 @@
 import UIKit
 
 class RedViewController: UIViewController {
-    private lazy var toGreenButton = UIButton.actionButton(title: "segue to Green", action: toGreenButtonTap)
-
-    @objc func toGreenButtonTap(sender: UIButton?) {
-        printClassAndFunc()
-        performSegue(withIdentifier: "segueToGreenVC", sender: self)
-    }
+    private lazy var toGreenButton = UIButton.actionButton(title: "segue to Green", action: { [weak self] in
+        self?.printClassAndFunc()
+        self?.performSegue(withIdentifier: "segueToGreenVC", sender: self)
+    })
 
     func layoutSubviews() {
         let safeAreaLayoutGuide = view.safeAreaLayoutGuide
 
         NSLayoutConstraint.activate([
             toGreenButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            toGreenButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 8),
+            toGreenButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        printClassAndFunc()
+        printClassAndFunc(info: "@")
 
         view.addSubview(toGreenButton)
         layoutSubviews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        printClassAndFunc(info: "@")
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        printClassAndFunc()
+        printClassAndFunc(info: "@")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        printClassAndFunc(info: "@")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        printClassAndFunc(info: "@")
     }
 
     deinit {
-        printClassAndFunc()
+        printClassAndFunc(info: "@")
     }
 }
 

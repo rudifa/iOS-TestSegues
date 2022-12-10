@@ -25,7 +25,7 @@ class GreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        printClassAndFunc(info: "@")
+        printClassAndFunc("@")
 
         view.addSubview(toBlueButton)
         layoutSubviews()
@@ -33,26 +33,26 @@ class GreenViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        printClassAndFunc(info: "@")
+        printClassAndFunc("@")
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        printClassAndFunc(info: "@")
+        printClassAndFunc("@")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        printClassAndFunc(info: "@")
+        printClassAndFunc("@")
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        printClassAndFunc(info: "@")
+        printClassAndFunc("@")
     }
 
     deinit {
-        printClassAndFunc(info: "@")
+        printClassAndFunc("@")
     }
 }
 

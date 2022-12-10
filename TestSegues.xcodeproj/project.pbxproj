@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D117C3629454B54004AED9A /* RudifaUtilPkg in Frameworks */ = {isa = PBXBuildFile; productRef = 9D117C3529454B54004AED9A /* RudifaUtilPkg */; };
 		9D9B49B424588AFA0027DA3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B49B324588AFA0027DA3F /* AppDelegate.swift */; };
 		9D9B49B624588AFA0027DA3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B49B524588AFA0027DA3F /* SceneDelegate.swift */; };
 		9D9B49B824588AFA0027DA3F /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B49B724588AFA0027DA3F /* RedViewController.swift */; };
@@ -15,7 +16,6 @@
 		9D9B49C024588AFE0027DA3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B49BE24588AFE0027DA3F /* LaunchScreen.storyboard */; };
 		9D9B49C924588C260027DA3F /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B49C724588C260027DA3F /* BlueViewController.swift */; };
 		9D9B49CA24588C260027DA3F /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B49C824588C260027DA3F /* GreenViewController.swift */; };
-		9D9B49CC24588DFC0027DA3F /* DebugUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B49CB24588DFC0027DA3F /* DebugUtil.swift */; };
 		9D9B49CE24588E5C0027DA3F /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B49CD24588E5C0027DA3F /* UIUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,6 @@
 		9D9B49C124588AFE0027DA3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9B49C724588C260027DA3F /* BlueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
 		9D9B49C824588C260027DA3F /* GreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
-		9D9B49CB24588DFC0027DA3F /* DebugUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugUtil.swift; sourceTree = "<group>"; };
 		9D9B49CD24588E5C0027DA3F /* UIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D117C3629454B54004AED9A /* RudifaUtilPkg in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,6 @@
 		9D9B49CF245892740027DA3F /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				9D9B49CB24588DFC0027DA3F /* DebugUtil.swift */,
 				9D9B49CD24588E5C0027DA3F /* UIUtil.swift */,
 			);
 			path = Util;
@@ -121,6 +120,9 @@
 			dependencies = (
 			);
 			name = TestSegues;
+			packageProductDependencies = (
+				9D117C3529454B54004AED9A /* RudifaUtilPkg */,
+			);
 			productName = TestSegues;
 			productReference = 9D9B49B024588AFA0027DA3F /* TestSegues.app */;
 			productType = "com.apple.product-type.application";
@@ -132,7 +134,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = "Rudolf Farkas";
 				TargetAttributes = {
 					9D9B49AF24588AFA0027DA3F = {
@@ -149,6 +151,9 @@
 				Base,
 			);
 			mainGroup = 9D9B49A724588AFA0027DA3F;
+			packageReferences = (
+				9D117C3429454B54004AED9A /* XCRemoteSwiftPackageReference "RudifaUtilPkg" */,
+			);
 			productRefGroup = 9D9B49B124588AFA0027DA3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -182,7 +187,6 @@
 				9D9B49C924588C260027DA3F /* BlueViewController.swift in Sources */,
 				9D9B49CE24588E5C0027DA3F /* UIUtil.swift in Sources */,
 				9D9B49B624588AFA0027DA3F /* SceneDelegate.swift in Sources */,
-				9D9B49CC24588DFC0027DA3F /* DebugUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +238,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -294,6 +299,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -380,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D117C3429454B54004AED9A /* XCRemoteSwiftPackageReference "RudifaUtilPkg" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rudifa/RudifaUtilPkg";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D117C3529454B54004AED9A /* RudifaUtilPkg */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D117C3429454B54004AED9A /* XCRemoteSwiftPackageReference "RudifaUtilPkg" */;
+			productName = RudifaUtilPkg;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D9B49A824588AFA0027DA3F /* Project object */;
 }

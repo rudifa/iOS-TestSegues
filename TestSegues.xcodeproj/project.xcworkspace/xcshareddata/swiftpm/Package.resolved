@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "rudifautilpkg",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rudifa/RudifaUtilPkg",
+      "state" : {
+        "branch" : "master",
+        "revision" : "54dc7a6984462cfccfae9a94cc6305976ca0304b"
+      }
+    }
+  ],
+  "version" : 2
+}

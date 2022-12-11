@@ -10,7 +10,7 @@ import UIKit
 
 class GreenViewController: UIViewController {
     private lazy var toBlueButton = UIButton.actionButton(title: "segue to Blue", action: { [weak self] in
-        self?.printClassAndFunc()
+        self?.printClassAndFunc("@")
         self?.performSegue(withIdentifier: "segueToBlueVC", sender: self)
     })
 
@@ -58,6 +58,6 @@ class GreenViewController: UIViewController {
 
 extension GreenViewController {
     @IBAction func unwindToGreenVC(_: UIStoryboardSegue) {
-        printClassAndFunc()
+        printClassAndFunc("@")
     }
 }

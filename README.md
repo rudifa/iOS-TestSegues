@@ -30,6 +30,32 @@ RedViewController --> GreenViewController --> BlueViewController |
 ---- 2021-05-29 22:19:59.264118 GreenViewController.deinit 
 ``` 
 
+```
+---- 2022-12-11 00:28:35.306619 RedViewController.viewDidLoad() 
+---- 2022-12-11 00:28:35.332430 RedViewController.viewWillAppear(_:) 
+---- 2022-12-11 00:28:35.424737 RedViewController.viewDidAppear(_:) 
+
+---- 2022-12-11 00:28:42.720062 RedViewController.toGreenButton 
+---- 2022-12-11 00:28:42.726156 GreenViewController.viewDidLoad() 
+---- 2022-12-11 00:28:42.744085 GreenViewController.viewWillAppear(_:) 
+---- 2022-12-11 00:28:43.341599 GreenViewController.viewDidAppear(_:) 
+
+---- 2022-12-11 00:28:49.908918 GreenViewController.toBlueButton 
+---- 2022-12-11 00:28:49.912387 BlueViewController.viewDidLoad() 
+---- 2022-12-11 00:28:49.918733 BlueViewController.viewWillAppear(_:) 
+---- 2022-12-11 00:28:50.427153 BlueViewController.viewDidAppear(_:) 
+
+---- 2022-12-11 00:28:56.135894 BlueViewController.unwindToRedButton 
+---- 2022-12-11 00:28:56.136312 RedViewController.unwindToRedVC(_:) 
+---- 2022-12-11 00:28:56.139281 BlueViewController.viewWillDisappear(_:) 
+---- 2022-12-11 00:28:56.141373 GreenViewController.viewWillDisappear(_:) 
+---- 2022-12-11 00:28:56.645622 GreenViewController.viewDidDisappear(_:) 
+---- 2022-12-11 00:28:56.646899 BlueViewController.viewDidDisappear(_:) 
+---- 2022-12-11 00:28:56.647223 BlueViewController.deinit 
+---- 2022-12-11 00:28:56.648095 GreenViewController.deinit 
+```
+
+
 Above trace confirms that the unwind segue from Blue to Red does not cause the intermediate, Green, to execute a transient sequence
 
 ``` 

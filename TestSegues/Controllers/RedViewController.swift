@@ -11,7 +11,7 @@ import RudifaUtilPkg
 
 class RedViewController: UIViewController {
     private lazy var toGreenButton = UIButton.actionButton(title: "segue to Green", action: { [weak self] in
-        self?.printClassAndFunc()
+        self?.printClassAndFunc("@")
         self?.performSegue(withIdentifier: "segueToGreenVC", sender: self)
     })
 
@@ -59,6 +59,6 @@ class RedViewController: UIViewController {
 
 extension RedViewController {
     @IBAction func unwindToRedVC(_: UIStoryboardSegue) {
-        printClassAndFunc()
+        printClassAndFunc("@")
     }
 }

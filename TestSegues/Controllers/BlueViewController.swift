@@ -10,7 +10,7 @@ import UIKit
 
 class BlueViewController: UIViewController {
     private lazy var unwindToRedButton = UIButton.actionButton(title: "unwind to Red", action: { [weak self] in
-        self?.printClassAndFunc()
+        self?.printClassAndFunc("@")
         self?.performSegue(withIdentifier: "unwindToRedVC", sender: self)
     })
 
@@ -58,6 +58,6 @@ class BlueViewController: UIViewController {
 
 extension BlueViewController {
     @IBAction func unwindToNowhere(_: UIStoryboardSegue) {
-        printClassAndFunc()
+        printClassAndFunc("@")
     }
 }
